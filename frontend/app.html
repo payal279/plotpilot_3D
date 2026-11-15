@@ -1,0 +1,109 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Workspace | PlotPilot</title>
+<link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;700&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="style.css">
+<link rel="stylesheet" href="app.css">
+</head>
+<body>
+<div class="veil"></div>
+<div class="hud top solid"><a class="logo" href="index.html">PlotPilot</a><span class="mono" id="who"></span></div>
+
+<div class="app">
+  <aside class="side">
+
+    <section class="panel">
+      <h2 class="ptitle">Describe your house</h2>
+      <label class="mono lbl" for="prompt">Your prompt</label>
+      <textarea id="prompt" rows="3">4 floors, 30x50 plot, East-facing, 2BHK, parking on ground</textarea>
+      <div class="chips" id="examples">
+        <button type="button" class="chip">3BHK, 30x40 plot, G+2, north facing</button>
+        <button type="button" class="chip">2 floors, 25x45 plot, 2BHK</button>
+      </div>
+      <div class="actions">
+        <button id="gen" type="button">Generate</button>
+        <button id="save" type="button" class="ghost" disabled>Save</button>
+      </div>
+      <p id="msg" class="msg" role="alert"></p>
+    </section>
+
+    <section class="panel">
+      <ol class="steps" id="steps">
+        <li data-step="1"><span class="dot"></span><span class="txt"><b>1. Understand prompt</b><span class="sub"></span></span></li>
+        <li data-step="2"><span class="dot"></span><span class="txt"><b>2. Draw 2D plan</b><span class="sub"></span></span></li>
+        <li data-step="3"><span class="dot"></span><span class="txt"><b>3. Build 3D model</b><span class="sub"></span></span></li>
+        <li data-step="4"><span class="dot"></span><span class="txt"><b>4. Run checks</b><span class="sub"></span></span></li>
+      </ol>
+    </section>
+
+    <details class="panel" open>
+      <summary>Understood from prompt</summary>
+      <div id="parsed" class="info"><p class="empty-s">Generate a design to see this.</p></div>
+    </details>
+
+    <details class="panel" open>
+      <summary>Checks</summary>
+      <div id="checks" class="info"><p class="empty-s">Generate a design to see this.</p></div>
+    </details>
+
+    <details class="panel">
+      <summary>Vastu</summary>
+      <div id="vastu" class="info"><p class="empty-s">Generate a design to see this.</p></div>
+    </details>
+
+    <details class="panel">
+      <summary>Cost estimate</summary>
+      <div id="cost" class="info"><p class="empty-s">Generate a design to see this.</p></div>
+    </details>
+
+    <details class="panel" open>
+      <summary>Saved designs</summary>
+      <div id="saved" class="info"><p class="empty-s">No saved designs yet.</p></div>
+    </details>
+
+    <p class="foot note">Concept design only. Rule-based demo layout, not approval-ready drawings.</p>
+  </aside>
+
+  <div class="stage" id="stage" data-view="both">
+    <div class="toolbar">
+      <div class="grp">
+        <span class="mono lbl">View</span>
+        <button type="button" class="tab" data-view="2d" aria-pressed="false">2D</button>
+        <button type="button" class="tab" data-view="3d" aria-pressed="false">3D</button>
+        <button type="button" class="tab" data-view="both" aria-pressed="true">Both</button>
+      </div>
+      <div class="grp right">
+        <button type="button" class="tab" id="tg-labels">Labels</button>
+        <button type="button" class="tab" id="tg-furniture">Furniture</button>
+        <button type="button" class="tab" id="tg-openings">Doors &amp; windows</button>
+        <button type="button" class="tab" id="tg-garden">Garden</button>
+        <button type="button" class="tab" id="stl">Download STL</button>
+      </div>
+    </div>
+
+    <div class="panes">
+      <div class="pane pane2d">
+        <div class="pane-head"><span class="mono">2D plan</span><span class="tabs" id="floor-tabs"></span></div>
+        <div class="pane-body" id="plan2d"><p class="empty">Your 2D plan will appear here.</p></div>
+      </div>
+
+      <div class="pane pane3d">
+        <div class="pane-head"><span class="mono">3D model</span>
+          <span class="slider"><label class="mono" for="explode">Pull apart</label><input id="explode" type="range" min="0" max="100" value="25"></span>
+        </div>
+        <div class="pane-body" id="view3d"><canvas id="gl3d" aria-label="3D model of the house"></canvas><p class="empty" id="empty3d">Your 3D model will appear here.</p></div>
+        <p class="hint mono">Drag to rotate, scroll to zoom.</p>
+      </div>
+    </div>
+  </div>
+</div>
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r128/three.min.js"></script>
+<script src="api.js"></script>
+<script src="view3d.js"></script>
+<script src="app.js"></script>
+</body>
+</html>

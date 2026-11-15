@@ -1,0 +1,11 @@
+.auth-wrap{min-height:100vh;display:flex;align-items:center;justify-content:center;padding:96px 20px 40px;box-sizing:border-box}
+.auth-wrap .card{width:100%;max-width:420px}
+.field{margin-bottom:18px}
+.field label{display:block;margin-bottom:8px;color:var(--mute)}
+.field input{width:100%;box-sizing:border-box}
+.hint{margin:6px 0 0;font-size:13px}
+.auth-msg{min-height:20px;margin:0 0 14px;font-size:14px;font-weight:500;color:var(--acc)}
+.auth-wrap button{width:100%}
+.auth-wrap button:disabled{opacity:.6;cursor:wait}
+.auth-alt{margin:20px 0 0;font-size:15px}
+.auth-alt a{color:var(--acc);text-decoration:underline}

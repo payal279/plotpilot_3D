@@ -1,0 +1,14 @@
+{
+  "name": "Sample rule set (demo only, NOT official)",
+  "note": "These numbers are placeholders for the demo. Replace them with your city's official building bylaws before relying on any result.",
+  "min_front_setback_ft": 5,
+  "min_side_setback_ft": 3,
+  "min_rear_setback_ft": 3,
+  "max_ground_coverage_pct": 60,
+  "max_far": 2.5,
+  "max_height_ft": 49,
+  "parking_required_from_floors": 3,
+  "min_room_area_sqft": { "living": 100, "bed": 100, "kitchen": 50, "bath": 20 },
+  "cost_per_sqft": { "Basic": 1500, "Standard": 1900, "Premium": 2500 },
+  "cost_note": "Sample construction rates in INR per sq ft. Edit for your city. Land, taxes and interiors are not included."
+}

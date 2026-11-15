@@ -1,0 +1,27 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>PlotPilot</title>
+<link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;700&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+<canvas id="gl" aria-hidden="true"></canvas><div class="veil"></div>
+<div class="hud top"><span class="logo">PlotPilot</span><span class="mono" id="nav-auth"><a href="login.html">Log in</a> / <a href="signup.html">Sign up</a></span></div>
+<div class="hud bl mono"><div id="h1">Status: idle</div><div id="h2">Floors: 04</div></div>
+<div class="hud br mono"><div>Scroll</div><div id="pct">000</div></div>
+<main>
+<section class="in" id="s0"><div class="card big"><span class="mono tag">AI house design / built for India</span><h1>Say your plot.<br>See your house.</h1><p>Describe a multi-floor home in English, Hindi or Hinglish. PlotPilot checks Vastu and local bylaws, fixes what fails, and shows it in 3D.</p>
+<div class="row" id="cta"><a class="btn" href="signup.html">Get started</a><a class="btn ghost" href="login.html">Log in</a></div>
+<section id="s1"><div class="card"><span class="mono tag">01 / Generate</span><h2>Prompt to plan</h2><p>An LLM turns your words into a structured plan for every floor. Pull the tower apart to see each level.</p></div></section>
+<section class="r" id="s2"><div class="card"><span class="mono tag">02 / Validate</span><h2>Rules, not guesses</h2><p>A separate rules engine checks Vastu, bylaws, parking and staircase alignment. The amber floor breaks a rule.</p></div></section>
+<section id="s3"><div class="card"><span class="mono tag">03 / Auto-fix</span><h2>Fail, fix, repeat</h2><p>Failed checks go back to the AI until the plan passes. Watch the amber floor pull back inside the limit.</p></div></section>
+<section class="r" id="s4"><div class="card"><span class="mono tag">04 / Export</span><h2>Print the model</h2><p>Export the same design as STL and 3D print it, floor by floor.</p><div class="row"><button id="top">Back to top</button></div><p class="note" style="margin-top:20px">Concept design and bylaw pre-check only. Final approval needs a licensed architect and the local authority.</p></div></section>
+</main>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r128/three.min.js"></script>
+<script src="api.js"></script>
+<script src="script.js"></script>
+</body>
+</html>

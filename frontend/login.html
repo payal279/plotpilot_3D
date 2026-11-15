@@ -1,0 +1,38 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Log in | PlotPilot</title>
+<link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;700&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="style.css">
+<link rel="stylesheet" href="auth.css">
+</head>
+<body>
+<div class="veil"></div>
+<div class="hud top"><a class="logo" href="index.html">PlotPilot</a><span class="mono">Concept design tool</span></div>
+
+<main class="auth-wrap in">
+  <div class="card">
+    <span class="mono tag">Welcome back</span>
+    <h2>Log in</h2>
+    <form id="auth-form" data-mode="login" novalidate>
+      <div class="field">
+        <label class="mono" for="email">Email</label>
+        <input id="email" type="email" autocomplete="email" required>
+      </div>
+      <div class="field">
+        <label class="mono" for="password">Password</label>
+        <input id="password" type="password" autocomplete="current-password" required>
+      </div>
+      <p id="auth-msg" class="auth-msg" role="alert"></p>
+      <button type="submit">Log in</button>
+    </form>
+    <p class="auth-alt">New here? <a href="signup.html">Create an account</a></p>
+  </div>
+</main>
+
+<script src="api.js"></script>
+<script src="auth.js"></script>
+</body>
+</html>

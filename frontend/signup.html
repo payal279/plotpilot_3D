@@ -1,0 +1,47 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Sign up | PlotPilot</title>
+<link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;700&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="style.css">
+<link rel="stylesheet" href="auth.css">
+</head>
+<body>
+<div class="veil"></div>
+<div class="hud top"><a class="logo" href="index.html">PlotPilot</a><span class="mono">Concept design tool</span></div>
+
+<main class="auth-wrap in">
+  <div class="card">
+    <span class="mono tag">Create your account</span>
+    <h2>Sign up</h2>
+    <form id="auth-form" data-mode="signup" novalidate>
+      <div class="field">
+        <label class="mono" for="name">Name</label>
+        <input id="name" type="text" autocomplete="name" required>
+      </div>
+      <div class="field">
+        <label class="mono" for="email">Email</label>
+        <input id="email" type="email" autocomplete="email" required>
+      </div>
+      <div class="field">
+        <label class="mono" for="password">Password</label>
+        <input id="password" type="password" autocomplete="new-password" minlength="8" required>
+        <p class="hint">At least 8 characters.</p>
+      </div>
+      <div class="field">
+        <label class="mono" for="confirm">Confirm password</label>
+        <input id="confirm" type="password" autocomplete="new-password" required>
+      </div>
+      <p id="auth-msg" class="auth-msg" role="alert"></p>
+      <button type="submit">Create account</button>
+    </form>
+    <p class="auth-alt">Already have an account? <a href="login.html">Log in</a></p>
+  </div>
+</main>
+
+<script src="api.js"></script>
+<script src="auth.js"></script>
+</body>
+</html>
